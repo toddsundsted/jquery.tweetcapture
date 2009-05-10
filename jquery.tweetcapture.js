@@ -1,6 +1,6 @@
 jQuery.fn.reverse = function() {
   return this.pushStack(this.get().reverse(), arguments);
-}
+};
 jQuery.fn.tweetcapture = function(options) {
   var defaults = {
     url: "http://search.twitter.com/search.json?callback=?"
@@ -8,7 +8,7 @@ jQuery.fn.tweetcapture = function(options) {
   var opts = jQuery.extend(defaults, options);
   return this.each(function() {
     var elem = this;
-    var title = $(elem).attr("title");
+    var title = jQuery(elem).attr("title");
     if (!title) {
       return;
     }
