@@ -26,6 +26,10 @@ jQuery.fn.tweetcapture = function(options) {
         var from_user_str = "<span class=\"from-user\"><a target=\"_blank\" href=\"http://twitter.com/" + this.from_user + "\">" + this.from_user + "</a></span>";
         var text_str = "<span class=\"text\">" + this.text + "</span>";
         jQuery(elem).prepend("<div id=\"tweet" + this.id + "\" class=\"tweet\">" + profile_image_url_str + text_str + from_user_str + created_at_str + "</div>");
+        jQuery("#tweet" + this.id).hide();
+        jQuery("#tweet" + this.id + " img").hide();
+        jQuery("#tweet" + this.id).slideDown(1000);
+        jQuery("#tweet" + this.id + " img").fadeIn(4000);
         jQuery.data(elem, "last_id", this.id);
       });
     });
